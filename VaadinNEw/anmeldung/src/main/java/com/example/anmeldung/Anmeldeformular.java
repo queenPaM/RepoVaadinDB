@@ -33,6 +33,7 @@ public class Anmeldeformular extends AbsoluteLayout {
 	protected TextField kidsurname;
 	protected DateField birthday;
 	protected ComboBox gender;
+	protected ComboBox location;
 	protected ComboBox month;
 	protected ComboBox year;
 	protected ComboBox hours;

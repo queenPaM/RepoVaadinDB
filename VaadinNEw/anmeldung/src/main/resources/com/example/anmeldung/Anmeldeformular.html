@@ -5,7 +5,7 @@
  </head> 
  <body> 
   <vaadin-absolute-layout width="1010px" height="610px"> 
-   <vaadin-horizontal-split-panel width="920px" height="490px" min-split-position="50%" max-split-position="50%" :top="0px" :left="0px"> 
+   <vaadin-horizontal-split-panel width="920px" height="530px" min-split-position="50%" max-split-position="50%" :top="0px" :left="0px"> 
     <vaadin-vertical-layout spacing size-auto margin> 
      <vaadin-horizontal-layout caption="Kontakt" spacing> 
       <vaadin-text-field caption="Name" _id="name"></vaadin-text-field> 
@@ -38,6 +38,11 @@
        <option>Option 3</option> 
       </vaadin-combo-box> 
      </vaadin-horizontal-layout> 
+     <vaadin-combo-box caption="Einrichtung" item-caption-mode="id" _id="location"> 
+      <option>Option 1</option> 
+      <option>Option 2</option> 
+      <option>Option 3</option> 
+     </vaadin-combo-box> 
      <vaadin-horizontal-layout caption="Betreuungsbeginn" spacing> 
       <vaadin-combo-box caption="Monat" item-caption-mode="id" _id="month"> 
        <option>Option 1</option> 
