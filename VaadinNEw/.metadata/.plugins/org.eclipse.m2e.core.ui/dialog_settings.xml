@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.example.warteliste"/>
+			<item value="com.example.anmeldung"/>
+		</list>
+		<list key="groupId">
+			<item value="com.example"/>
+		</list>
+		<list key="artifactId">
+			<item value="warteliste"/>
+			<item value="anmeldung"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="1.0-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

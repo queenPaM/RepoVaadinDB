@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+paletteFilter=combo
+serverAddress=192.168.2.104
+serverPort=49418
+theme=mytheme
