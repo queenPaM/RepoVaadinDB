@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
+import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
@@ -24,24 +25,18 @@ import com.vaadin.ui.VerticalLayout;
 @Widgetset("com.example.warteliste.MyAppWidgetset")
 public class MyUI extends UI {
 
-    @Override
-    protected void init(VaadinRequest vaadinRequest) {
-        final VerticalLayout layout = new VerticalLayout();
-        
-        final TextField name = new TextField();
-        name.setCaption("Type your name here:");
+	protected static final String MAINVIEW = "main";
 
-        Button button = new Button("Click Me");
-        button.addClickListener( e -> {
-            layout.addComponent(new Label("Thanks " + name.getValue() 
-                    + ", it works!"));
-        });
-        
-        layout.addComponents(name, button);
-        layout.setMargin(true);
-        layout.setSpacing(true);
-        
-        setContent(layout);
+    @Override
+    protected void init(VaadinRequest request) {
+        getPage().setTitle("Navigation Example");
+
+        // Create a navigator to control the views
+      final  Navigator  navigator = new Navigator(this, this);
+
+        // Create and register the views
+        navigator.addView("", new LogInView());
+        navigator.addView(MAINVIEW, new MainView());
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

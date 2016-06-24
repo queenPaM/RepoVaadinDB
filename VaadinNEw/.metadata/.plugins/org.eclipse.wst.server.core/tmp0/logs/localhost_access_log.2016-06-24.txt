@@ -97,3 +97,4 @@
 0:0:0:0:0:0:0:1 - - [24/Jun/2016:22:03:54 +0200] "GET /anmeldung/VAADIN/widgetsets/com.example.anmeldung.MyAppWidgetset/com.example.anmeldung.MyAppWidgetset.nocache.js?1466798634804 HTTP/1.1" 200 3313
 0:0:0:0:0:0:0:1 - - [24/Jun/2016:22:03:55 +0200] "POST /anmeldung/servlet/com.example.anmeldung.MyUI$MyUIServlet?v-1466798634805 HTTP/1.1" 200 9304
 0:0:0:0:0:0:0:1 - - [24/Jun/2016:22:05:20 +0200] "POST /anmeldung/HEARTBEAT/?v-uiId=3 HTTP/1.1" 410 1064
+0:0:0:0:0:0:0:1 - - [24/Jun/2016:22:08:55 +0200] "POST /anmeldung/HEARTBEAT/?v-uiId=0 HTTP/1.1" 404 992
