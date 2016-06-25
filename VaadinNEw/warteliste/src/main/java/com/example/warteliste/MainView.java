@@ -17,28 +17,60 @@ public class MainView extends CustomComponent implements View {
 
     public static final String NAME = "";
 
-    Label text = new Label();
+    Label text = new Label("hello");
 
       
     public MainView() {
-    	VerticalLayout layout = new VerticalLayout();
+    	/*VerticalLayout layout = new VerticalLayout();
     	HorizontalLayout tabellenlayout = new HorizontalLayout();
+    	MenuEditorSuperUser menuSuperUser = new MenuEditorSuperUser();
+
     	MenuEditor menu = new MenuEditor();
+
+    	
+    	String username = String.valueOf(getSession().getAttribute("user"));
+    	if(username == "test@test.com"){
+    		layout.addComponent(menuSuperUser);
+    	}else{
+    		layout.addComponent(menu);
+    	}
     	UIUserEditor warteliste = new UIUserEditor();
     	KidsInKitaEditor angemeldetView = new KidsInKitaEditor();
     	
     	
     	tabellenlayout.addComponents(warteliste, angemeldetView);
-    	layout.addComponents(menu, tabellenlayout);
-        setCompositionRoot(layout);
+    	layout.addComponents(text, tabellenlayout);
+        setCompositionRoot(layout);*/
     }
 
     @Override
     public void enter(ViewChangeEvent event) {
-        // Get the user name from the session
-      //  String username = String.valueOf(getSession().getAttribute("user"));
+    	
+        
+    	VerticalLayout layout = new VerticalLayout();
+    	HorizontalLayout tabellenlayout = new HorizontalLayout();
+    	MenuEditorSuperUser menuSuperUser = new MenuEditorSuperUser();
 
-        // And show the username
-       // text.setValue("Hello " + username);
+    	MenuEditor menu = new MenuEditor();
+
+    	// Get the user name from the session
+    	String username = String.valueOf(getSession().getAttribute("user"));
+    	String superUser = "test@test.com";
+    	//JENDRIK, if abfrage erkennt test@test.com leider nciht, daher ruft er immer menu auf statt menuSuperUser
+    	if(username == superUser){
+    		layout.addComponent(menuSuperUser);
+    	}else{
+    		layout.addComponent(menu);
+    	}
+    	
+    	UIUserEditor warteliste = new UIUserEditor();
+    	KidsInKitaEditor angemeldetView = new KidsInKitaEditor();
+    	
+        text.setValue("Hello " + username);
+    	tabellenlayout.addComponents(warteliste, angemeldetView);
+    	layout.addComponents(text, tabellenlayout);
+        setCompositionRoot(layout);
+        
+
     }
 }

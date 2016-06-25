@@ -1,6 +1,7 @@
 package com.example.warteliste;
 
 
+
 import com.vaadin.event.ItemClickEvent;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
@@ -14,10 +15,10 @@ import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.MenuBar.MenuItem;
 
-public class MenuEditor extends menu {
+public class MenuEditorSuperUser extends menu {
 
 	
-	public MenuEditor(){
+	public MenuEditorSuperUser(){
 	// A feedback component
 	final Label selection = new Label("-");
 	
@@ -43,11 +44,46 @@ public class MenuEditor extends menu {
             getUI().getNavigator().navigateTo(MainView.NAME);
 	    }  
 	};
-
-		      
-		      
-		  
+	final Window newUser = new Window("Nutzer hinzufügen");
 	
+	MenuBar.Command addUser = new MenuBar.Command() {
+	    public void menuSelected(MenuItem selectedItem) {
+	    	Button save = new Button("Speichern");
+		    save.setStyleName("friendly");
+		      save.addClickListener(new Button.ClickListener() {
+		          public void buttonClick(ClickEvent event) {
+		              Notification.show("You pressed Save");
+		          }
+		      });
+		      Button cancel = new Button("Abbrechen");
+		      cancel.setStyleName("danger");
+		      cancel.addClickListener(new Button.ClickListener() {
+		          public void buttonClick(ClickEvent event) {
+		             // Notification.show("Do not press this button again");
+		              newUser.close();
+		          }
+		      });
+		      
+		      
+		      final VerticalLayout layout = new VerticalLayout();
+		      final HorizontalLayout buttonlayout = new HorizontalLayout();
+		      buttonlayout.setSpacing(true);
+		      buttonlayout.setMargin(true);
+		      
+		      final NeuerNutzer windowNewUser = new NeuerNutzer();
+		      buttonlayout.addComponents(save, cancel);
+		      layout.addComponents(windowNewUser, buttonlayout);
+		      layout.setComponentAlignment(buttonlayout, Alignment.TOP_RIGHT);
+		      newUser.setContent(layout);
+  	        
+		      newUser.setModal(true);
+		      newUser.setClosable(false);
+  	        
+		      newUser.setResizable(false);
+  	       
+  	        UI.getCurrent().addWindow(newUser);
+			}
+	};
 	// Put some items in the menu hierarchically
 	
 	MenuBar.MenuItem logOut =
@@ -63,8 +99,14 @@ public class MenuEditor extends menu {
 	einrichtung.addItem("Krämerstieg", null, mycommand);
 	einrichtung.addItem("Fuhsbüttler Straße", null, mycommand);
 
-
+	  //boolean isLoggedIn = getSession().getAttribute("user") != null;
+	//  if(isLoggdIn)
+	// Yet another top-level item
+	MenuBar.MenuItem neueKitaleitung =
+	    menub.addItem("Nutzer hinzufügen", null, addUser);
+	//neueKitaleitung.addItem("Car Service", null, mycommand);
+	
+	
       addComponent(selection);
-      
 }
 }
