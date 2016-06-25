@@ -2,6 +2,7 @@ package com.example.warteliste;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.CustomComponent;
@@ -50,6 +51,7 @@ public class MainView extends CustomComponent implements View {
         text.setValue("Hello " + username);
     	tabellenlayout.addComponents(warteliste, angemeldetView);
     	layout.addComponents(text, tabellenlayout);
+    	layout.setComponentAlignment(tabellenlayout, Alignment.TOP_CENTER);
         setCompositionRoot(layout);
         
 

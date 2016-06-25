@@ -16,6 +16,8 @@ import com.vaadin.ui.Window;
 import backend.Child;
 import backend.ChildBackend;
 
+
+
 public class UIUserEditor extends UIUser{
 	
 	
@@ -28,7 +30,9 @@ public class UIUserEditor extends UIUser{
 	       //verbindet Grid und Bean Item Container
 	       kindListe.setContainerDataSource(container);
 	       //entfehrnt EINE Bestimte Reihe aus der Tabelle
-	       kindListe.removeColumn("name");
+	       //kindListe.removeColumn("note");
+	       //alle Spalten die angezeight werden sollen plus Reihenfolge
+	       kindListe.setColumns("name","surname","address");
 	       gender.addItems("Junge", "Mädchen", "Alle");
 	       accepted.addItems("nicht Angenommen", "Angenommen", "Alle");
 	       
