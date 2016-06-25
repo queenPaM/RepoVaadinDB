@@ -30,18 +30,18 @@ public class LogInView extends CustomComponent implements View,
         setSizeFull();
 
         // Create the user input field
-        user = new TextField("User:");
+        user = new TextField("Nutzername");
         user.setWidth("300px");
         user.setRequired(true);
         user.setInputPrompt("Your username (eg. joe@email.com)");
-        user.addValidator(new EmailValidator(
-                "Username must be an email address"));
-        user.setInvalidAllowed(false);
+        //user.addValidator(new EmailValidator(
+            //    "Username must be an email address"));
+        //user.setInvalidAllowed(false);
 
         // Create the password input field
-        password = new PasswordField("Password:");
+        password = new PasswordField("Password");
         password.setWidth("300px");
-        password.addValidator(new PasswordValidator());
+        //password.addValidator(new PasswordValidator());
         password.setRequired(true);
         password.setValue("");
         password.setNullRepresentation("");
@@ -97,6 +97,11 @@ public class LogInView extends CustomComponent implements View,
         }
     }
 
+    
+    
+    
+    
+    
     @Override
     public void buttonClick(ClickEvent event) {
 
@@ -108,11 +113,11 @@ public class LogInView extends CustomComponent implements View,
         if (!user.isValid() || !password.isValid()) {
             return;
         }
-
+        final Label falsch = new Label("E-Mail oder Password ist falsch.");
         String username = user.getValue();
         String password = this.password.getValue();
 
-        //
+        //JENDRIK
         // Validate username and password with database here. For examples sake
         // I use a dummy username and password.
         //
@@ -130,6 +135,7 @@ public class LogInView extends CustomComponent implements View,
         } else {
 
             // Wrong password clear the password field and refocuses it
+        	
             this.password.setValue(null);
             this.password.focus();
 

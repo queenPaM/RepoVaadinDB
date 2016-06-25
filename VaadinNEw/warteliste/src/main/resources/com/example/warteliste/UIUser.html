@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+ </head> 
+ <body> 
+  <vaadin-vertical-layout spacing responsive width="475px" margin> 
+   <vaadin-horizontal-layout spacing responsive width-full> 
+    <vaadin-text-field caption="Name" width-full _id="name" :expand></vaadin-text-field> 
+   </vaadin-horizontal-layout> 
+   <vaadin-horizontal-layout spacing responsive width-full> 
+    <vaadin-popup-date-field caption="Geburtstag" responsive _id="birthday"></vaadin-popup-date-field> 
+    <vaadin-text-field caption="Alter" responsive _id="age" :right></vaadin-text-field> 
+   </vaadin-horizontal-layout> 
+   <vaadin-label responsive size-auto plain-text>
+     Betreuungsbeginn 
+   </vaadin-label> 
+   <vaadin-horizontal-layout spacing responsive width-full> 
+    <vaadin-text-field caption="Monat" responsive _id="moth"></vaadin-text-field> 
+    <vaadin-text-field caption="Jahr" responsive _id="year" :right></vaadin-text-field> 
+   </vaadin-horizontal-layout> 
+   <vaadin-horizontal-layout spacing responsive> 
+    <vaadin-option-group item-caption-mode="id"> 
+     <option>Option 1</option> 
+     <option>Option 2</option> 
+     <option>Option 3</option> 
+    </vaadin-option-group> 
+    <vaadin-vertical-layout size-auto> 
+     <vaadin-check-box caption="Mädchen" responsive _id="girl"></vaadin-check-box> 
+     <vaadin-check-box caption="Junge" responsive checked _id="boy"></vaadin-check-box> 
+    </vaadin-vertical-layout> 
+   </vaadin-horizontal-layout> 
+   <vaadin-button style-name="friendly" responsive plain-text _id="suche" :right>
+     Suche 
+   </vaadin-button> 
+   <vaadin-grid caption="Suchergebniss" width-full _id="kindListe"></vaadin-grid> 
+  </vaadin-vertical-layout>  
+ </body>
+</html>
