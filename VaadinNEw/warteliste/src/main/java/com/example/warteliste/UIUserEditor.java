@@ -29,6 +29,8 @@ public class UIUserEditor extends UIUser{
 	       kindListe.setContainerDataSource(container);
 	       //entfehrnt EINE Bestimte Reihe aus der Tabelle
 	       kindListe.removeColumn("name");
+	       gender.addItems("Junge", "Mädchen", "Alle");
+	       accepted.addItems("nicht Angenommen", "Angenommen", "Alle");
 	       
 	       //Click listener für die Kind Tabelle
 	       kindListe.addItemClickListener(new ItemClickEvent.ItemClickListener() {
@@ -68,6 +70,8 @@ public class UIUserEditor extends UIUser{
 	    	        buttonlayout.setMargin(true);
 	    	        
 	    	        final KindBearbeiten2 windowKind = new KindBearbeiten2();
+	    	       
+	    	        
 	    	        buttonlayout.addComponents(save, cancel);
 	    	        layout.addComponents(windowKind, buttonlayout);
 	    	        layout.setComponentAlignment(buttonlayout, Alignment.TOP_RIGHT);
