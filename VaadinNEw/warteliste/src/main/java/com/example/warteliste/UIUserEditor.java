@@ -18,6 +18,8 @@ import controller.dao.factories.DAOFactory;
 import controller.dao.implementation.mysql.DAOChildSql;
 import model.Child;
 
+
+
 public class UIUserEditor extends UIUser{
 	List<Child> list = new ArrayList();
 	BeanItemContainer<Child> container;
@@ -39,7 +41,9 @@ public class UIUserEditor extends UIUser{
 	       //verbindet Grid und Bean Item Container
 	       kindListe.setContainerDataSource(container);
 	       //entfehrnt EINE Bestimte Reihe aus der Tabelle
-	       kindListe.removeColumn("name");
+	       //kindListe.removeColumn("note");
+	       //alle Spalten die angezeight werden sollen plus Reihenfolge
+	       kindListe.setColumns("name","surname","address");
 	       gender.addItems("Junge", "Mädchen", "Alle");
 	       accepted.addItems("nicht Angenommen", "Angenommen", "Alle");
 	       
