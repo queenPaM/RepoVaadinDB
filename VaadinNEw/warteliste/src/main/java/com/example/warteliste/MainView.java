@@ -21,26 +21,7 @@ public class MainView extends CustomComponent implements View {
 
       
     public MainView() {
-    	/*VerticalLayout layout = new VerticalLayout();
-    	HorizontalLayout tabellenlayout = new HorizontalLayout();
-    	MenuEditorSuperUser menuSuperUser = new MenuEditorSuperUser();
-
-    	MenuEditor menu = new MenuEditor();
-
     	
-    	String username = String.valueOf(getSession().getAttribute("user"));
-    	if(username == "test@test.com"){
-    		layout.addComponent(menuSuperUser);
-    	}else{
-    		layout.addComponent(menu);
-    	}
-    	UIUserEditor warteliste = new UIUserEditor();
-    	KidsInKitaEditor angemeldetView = new KidsInKitaEditor();
-    	
-    	
-    	tabellenlayout.addComponents(warteliste, angemeldetView);
-    	layout.addComponents(text, tabellenlayout);
-        setCompositionRoot(layout);*/
     }
 
     @Override
